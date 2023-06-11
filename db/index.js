@@ -1,7 +1,7 @@
 const mongoose = require(`mongoose`)
 
 mongoose    
-    .connect(`mongodb://127.0.0.1:27017/nervDatabase`)
+    .connect(`mongodb+srv://alisid9835:safais34@nervcorp.5macynj.mongodb.net/?retryWrites=true&w=majority`)
     .then(()=>{
         console.log(`Successfully connected to MongoDB!`)
     })

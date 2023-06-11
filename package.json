@@ -19,7 +19,7 @@
   "scripts": {
     "start": "concurrently \"npm run backend\" \"npm run frontend\"",
     "backend": "node server.js",
-    "frontend": "react-scripts start --cwd src",
+    "frontend": "npm run dev vite-app",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "dev": "nodemon server.js"

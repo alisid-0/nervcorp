@@ -9,11 +9,13 @@ const app = express()
 app.use(express.json())
 app.use(logger(`dev`))
 
-app.use(express.static(`public`))
+app.use(express.static(`./vite-app/dist`))
+// app.use(express.static(`./vite-app`))
 
 app.use(`/api`, routes)
 
-app.use(`*`, express.static(`public`))
+app.use(`*`, express.static(`./vite-app/dist`))
+// app.use(`*`, express.static(`./vite-app`))
 
 app.listen(PORT, ()=> console.log(`Listening on port: ${PORT}`))
 
