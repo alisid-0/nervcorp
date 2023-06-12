@@ -1,0 +1,3 @@
+./node_modules
+./vite-app/node_modules
+.DS_Store
