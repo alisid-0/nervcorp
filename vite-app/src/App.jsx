@@ -1,8 +1,8 @@
 import './App.css'
 import Header from "./Header";
 import Home from './Home'
+import Footer from './Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './assets/nervlogo.png';
 import { Container } from 'react-bootstrap'
 
 
@@ -12,6 +12,7 @@ function App() {
     <Container className='home-content'>
       <Header />
       <Home />
+      <Footer/>
     </Container>
   )
 }

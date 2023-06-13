@@ -1,8 +1,10 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
-import { Container, Image } from 'react-bootstrap';
+import Header from './Header'
+import { React, useState } from 'react';
+import { Container, Image, Carousel } from 'react-bootstrap';
 import nervDark from './assets/nervdark.png'
+import lunarisGif from './assets/lunaris.gif'
 
 const nervPara = `Welcome to Nerv, a small and passionate indie game development studio dedicated to creating unique and exciting games.
 
@@ -28,9 +30,44 @@ function WhoWeAre(){
                         <p key={index}>{paragraph}<br/></p>
                         ))}
                     </Container>
-                    <Image src={nervDark} fluid className="align-self-start shadow-md"></Image>
+                    <Image src={nervDark} fluid className="align-self-start shadow-md" style={{maxWidth: '70%', borderRadius: '30px'}}></Image>
                 </Container>
             </Container>
+    )
+}
+
+function ProjectCarousel(){
+    const [index, setIndex] = useState(0)
+
+    const handleSelect = (selectedIndex) =>{
+        setIndex(selectedIndex)
+    }
+
+    return(
+        <Carousel activeIndex={index} onSelect={handleSelect}>
+            <Carousel.Item>
+                <Image
+                className="d-block w-100 c"
+                src={lunarisGif}
+                >
+                </Image>
+            </Carousel.Item>
+            <Carousel.Item>
+                <Image
+                className="d-block w-100 c"
+                src={lunarisGif}
+                >
+                </Image>
+            </Carousel.Item>
+            <Carousel.Item>
+                <Image
+                className="d-block w-100 c"
+                src={lunarisGif}
+                >
+                </Image>
+            </Carousel.Item>
+
+        </Carousel>
     )
 }
 
@@ -38,6 +75,11 @@ function Projects(){
     return(
         <Container className='text-light home-section'>
             <h1>Our Projects</h1>
+            <Container>
+                <h2 className="pb-4">Lunaris</h2>
+                <ProjectCarousel/>
+                <h4 className="py-3">The moon is falling. Team up with an ally scientist to stop it.</h4>
+            </Container>
         </Container>
     )
 }
@@ -45,10 +87,9 @@ function Projects(){
 function Home() {
   return (
     <Container>
-        <WhoWeAre className="my-30" spacing="300"/>
-        <Projects className="my-30"/>
+        <WhoWeAre className="my-5 mx-5 py-5"/>
+        <Projects className="my-5 mx-5 py-5"/>
     </Container>
-    
   );
 }
 
