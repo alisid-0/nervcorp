@@ -30,7 +30,7 @@
 }
 
 .home-section{
-  background-color:#540a7b86;
+  background-color:#36065093;
   border-radius: 60px;
   margin-top: 100px;
   margin-bottom: 400px;
@@ -51,3 +51,7 @@
   max-width: 400px !important;
 }
 
+#log-in-div{
+  display: flex;
+  justify-content: center;
+}
