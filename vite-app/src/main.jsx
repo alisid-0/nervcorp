@@ -49,12 +49,10 @@ const router = createBrowserRouter([
 
 ])
 
-const contextValue = 'hello hi yo'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <UserContext.Provider value={contextValue}>
       <RouterProvider router={router}/>
-    </UserContext.Provider>
   </React.StrictMode>,
 )
