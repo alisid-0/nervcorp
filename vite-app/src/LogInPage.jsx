@@ -1,7 +1,5 @@
 import {Container, Form, Button} from 'react-bootstrap'
 import './App.css'
-// import LogIn from './LogIn'
-import Header from './Header'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google'
 import { useEffect, useState, useContext } from 'react'
@@ -13,7 +11,6 @@ import { UserContext } from './UserContext';
 
 
 function LogInPage(){
-    const msg = useContext(UserContext)
     const [user, setUser] = useState({})
     let isLoggedIn = false
 
@@ -46,8 +43,6 @@ function LogInPage(){
 
     return(
         <Container>
-            <Header/>
-            <h1>{msg}</h1>
              { Object.keys(user).length != 0 ? (  
                 <>
                 <Button onClick= {(e)=> handleSignOut(e)}>Sign Out</Button> 
