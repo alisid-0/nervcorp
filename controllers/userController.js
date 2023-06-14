@@ -9,6 +9,17 @@ const getAllUsers = async(req,res) =>{
     }
 }
 
+const createUser = async(req,res)=>{
+    const users = new User(req.body)
+    try{
+        await users.save()
+        res.status(201).send(user)
+    } catch(e){
+        res.status(400).send(e.message)
+    }
+}
+
 module.exports ={
-    getAllUsers
+    getAllUsers,
+    createUser
 }
