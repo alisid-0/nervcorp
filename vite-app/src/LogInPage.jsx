@@ -14,7 +14,6 @@ const LogInPage=()=>{
     const contextValue = useContext(LoginContext)
     const user = contextValue.user
     const setUser = contextValue.setUser
-    // const [user, setUser] = useState({})
     
     function handleCallbackResponse(response){
         let userObject = jwt_decode(response.credential)
@@ -45,11 +44,11 @@ const LogInPage=()=>{
         <Container>
              { Object.keys(user).length != 0 ? (  
                 <>
-                <div>
-                    <img src={user.picture}></img>
+                <div className='py-5'>
                     <h3 className='text-light'>Welcome, {user.name}!</h3>
+                    <img className='py-4' src={user.picture}></img>
                 </div>
-                <Button onClick= {(e)=> handleSignOut(e)}>Sign Out</Button> 
+                <Button className='mb-5' onClick= {(e)=> handleSignOut(e)}>Sign Out</Button> 
                 </>
              
              ): 
@@ -61,7 +60,7 @@ const LogInPage=()=>{
         </Container>
        
     )
-    
+
 }
 
 function LoginForms(){
