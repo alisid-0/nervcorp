@@ -14,15 +14,20 @@ const LogInPage=()=>{
     const contextValue = useContext(LoginContext)
     const user = contextValue.user
     const setUser = contextValue.setUser
+    const signedIn = contextValue.signedIn
+    const setSignedIn = contextValue.setSignedIn
     
     function handleCallbackResponse(response){
         let userObject = jwt_decode(response.credential)
+        console.log(userObject)
         setUser(userObject)
+        setSignedIn(true)
         document.getElementById('log-in-div').hidden = true
     }
 
     function handleSignOut(event){
         setUser({})
+        setSignedIn(false)
         document.getElementById('log-in-div').hidden = false
     }
 
@@ -39,10 +44,9 @@ const LogInPage=()=>{
         )
     }, [])
 
-
     return(
         <Container>
-             { Object.keys(user).length != 0 ? (  
+             { (signedIn == true) ? (  
                 <>
                 <div className='py-5'>
                     <h3 className='text-light'>Welcome, {user.name}!</h3>
@@ -58,15 +62,46 @@ const LogInPage=()=>{
              </>
              }
         </Container>
-       
     )
-
 }
 
+
+
+
+
 function LoginForms(){
+    const contextValue = useContext(LoginContext)
+    const user = contextValue.user
+    const setUser = contextValue.setUser
+    const signedIn = contextValue.signedIn
+    const setSignedIn = contextValue.setSignedIn
+    const signInHandler = async()=>{
+        const email = document.getElementById(`formBasicEmail`).value
+        const password = document.getElementById(`formBasicPassword`).value
+        console.log(email,password)
+        const users = await axios.get(`http://localhost:3001/api/users`)
+        console.log(users.data)
+        for(let i of users.data){
+            console.log(i)
+            if (email == i.email){
+                console.log(`Signed in!`)
+                console.log(i.name, i.email)
+                let userObject = {
+                    email: i.email,
+                    name: i.name
+                }
+                console.log(userObject)
+                setSignedIn(true)
+                setUser(userObject)
+            } else {
+                console.log(`Account not found. Please try again.`)
+                setSignedIn(false)
+                setUser({})
+            }
+        }
+    }
     return(
         <Container className='text-light login-page'>
-            
             <h1 className="pt-5 pb-5">Login Page</h1>
             <Container className='login-container'>
                 <Form>
@@ -80,15 +115,13 @@ function LoginForms(){
                         <Form.Text className='text-light'>We'll never share your password with anyone else.</Form.Text>
                     </Form.Group>
                 </Form>
-                <Button>Sign In</Button>
+                <Button onClick={signInHandler}>Sign In</Button>
                 <p className="pt-5"><i>Don't have an account? <a href=''>Sign up.</a></i></p>
             </Container>
         </Container>
     )
 }
 
-const signInHandler = async()=>{
 
-}
 
 export default LogInPage

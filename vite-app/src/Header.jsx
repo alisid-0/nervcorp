@@ -39,6 +39,11 @@ function Header() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      {Object.keys(user).length !=0? (
+        <h6 className='pt-3' style={{color: 'rgba(255, 255, 255, 0.55)'}}>
+          Welcome, {user.name}!
+        </h6>  
+    ): null}
       <Button className='btn-dark py-3 login-button' as={Link} to='/login'>
         {Object.keys(user).length !=0? 'Log Out': 'Log In'}
       </Button>
