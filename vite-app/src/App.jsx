@@ -20,14 +20,14 @@ export const LoginContext = createContext(null)
 
 function App() {
 
-  const [loggedIn, setLoggedIn] = useState(false)
+  const [user, setUser] = useState({})
 
   useEffect(()=>{
-    console.log(loggedIn)
+    console.log(user)
   })
 
   return (
-    <LoginContext.Provider value={{loggedIn, setLoggedIn}}>
+    <LoginContext.Provider value={{user,setUser}}>
     <Container className='home-content'>
       <Router>
         <Header />

@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 import { LoginContext } from './App';
 
 function Header() {
-  const loggedIn = useContext(LoginContext)
+  const contextValue = useContext(LoginContext)
+  const user = contextValue.user
   return (
     <Container className='header-login'>
       <Navbar variant='dark' className='nav'>
@@ -38,8 +39,8 @@ function Header() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <Button className='btn-dark py-2 login-button' as={Link} to='/login'>
-        Log In
+      <Button className='btn-dark py-3 login-button' as={Link} to='/login'>
+        {Object.keys(user).length !=0? 'Log Out': 'Log In'}
       </Button>
     </Container>
   );

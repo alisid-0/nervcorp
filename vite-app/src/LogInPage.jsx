@@ -10,25 +10,21 @@ import { LoginContext } from './App';
 
 
 
-function LogInPage(){
+const LogInPage=()=>{
     const contextValue = useContext(LoginContext)
-    const loggedIn = contextValue.loggedIn
-    const setLoggedIn = contextValue.setLoggedIn
-    console.log(contextValue,loggedIn,setLoggedIn)
-    const [user, setUser] = useState({})
-
+    const user = contextValue.user
+    const setUser = contextValue.setUser
+    // const [user, setUser] = useState({})
+    
     function handleCallbackResponse(response){
         let userObject = jwt_decode(response.credential)
         setUser(userObject)
         document.getElementById('log-in-div').hidden = true
-        setLoggedIn(true)
-        console.log(setLoggedIn)
     }
 
     function handleSignOut(event){
         setUser({})
         document.getElementById('log-in-div').hidden = false
-        // setLoggedIn(false)
     }
 
     useEffect(()=>{
@@ -49,16 +45,19 @@ function LogInPage(){
         <Container>
              { Object.keys(user).length != 0 ? (  
                 <>
-                
-                <Button onClick= {(e)=> handleSignOut(e)}>Sign Out</Button> 
                 <div>
                     <img src={user.picture}></img>
-                    <h3>Welcome, {user.name}!</h3>
+                    <h3 className='text-light'>Welcome, {user.name}!</h3>
                 </div>
+                <Button onClick= {(e)=> handleSignOut(e)}>Sign Out</Button> 
                 </>
              
-             ): <LoginForms/>}
+             ): 
+             <>
+             <LoginForms/>
              <Container id="log-in-div"></Container>
+             </>
+             }
         </Container>
        
     )
@@ -87,6 +86,10 @@ function LoginForms(){
             </Container>
         </Container>
     )
+}
+
+const signInHandler = async()=>{
+
 }
 
 export default LogInPage
