@@ -2,29 +2,33 @@ import {Container, Form, Button} from 'react-bootstrap'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google'
-import { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import jwt_decode from 'jwt-decode'
 import './App.css'
-import { UserContext } from './UserContext';
+import { LoginContext } from './App';
 
 
 
 
 function LogInPage(){
+    const contextValue = useContext(LoginContext)
+    const loggedIn = contextValue.loggedIn
+    const setLoggedIn = contextValue.setLoggedIn
+    console.log(contextValue,loggedIn,setLoggedIn)
     const [user, setUser] = useState({})
-    let isLoggedIn = false
 
     function handleCallbackResponse(response){
         let userObject = jwt_decode(response.credential)
         setUser(userObject)
         document.getElementById('log-in-div').hidden = true
-        isLoggedIn = true
+        setLoggedIn(true)
+        console.log(setLoggedIn)
     }
 
     function handleSignOut(event){
         setUser({})
         document.getElementById('log-in-div').hidden = false
-        isLoggedIn= false
+        // setLoggedIn(false)
     }
 
     useEffect(()=>{
@@ -45,6 +49,7 @@ function LogInPage(){
         <Container>
              { Object.keys(user).length != 0 ? (  
                 <>
+                
                 <Button onClick= {(e)=> handleSignOut(e)}>Sign Out</Button> 
                 <div>
                     <img src={user.picture}></img>

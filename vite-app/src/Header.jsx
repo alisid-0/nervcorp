@@ -1,11 +1,13 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from './assets/nervlogo.png';
 import { Navbar, Nav, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { LoginContext } from './App';
 
 function Header() {
+  const loggedIn = useContext(LoginContext)
   return (
     <Container className='header-login'>
       <Navbar variant='dark' className='nav'>

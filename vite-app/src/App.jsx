@@ -11,25 +11,40 @@ import Contact from './Contact';
 import LogInPage from './LogInPage';
 import ErrorPage from './ErrorPage';
 import Footer from './Footer';
+import { useState, createContext, useEffect } from 'react';
+
+
+
+export const LoginContext = createContext(null)
+
 
 function App() {
+
+  const [loggedIn, setLoggedIn] = useState(false)
+
+  useEffect(()=>{
+    console.log(loggedIn)
+  })
+
   return (
+    <LoginContext.Provider value={{loggedIn, setLoggedIn}}>
     <Container className='home-content'>
       <Router>
         <Header />
-        <Routes>
-          <Route path='/games' element={<Games/>} />
-          <Route path='/forum' element={<Forum/>} />
-          <Route path='/about' element={<About/>} />
-          <Route path='/contact' element={<Contact/>} />
-          <Route path='/login' element={<LogInPage/>} />
-          <Route path='/home' exact element={<Home/>} />
-          <Route path='/' exact element={<Home/>} />
-          <Route element={<ErrorPage/>} />
-        </Routes>
+          <Routes>
+            <Route path='/games' element={<Games/>} />
+            <Route path='/forum' element={<Forum/>} />
+            <Route path='/about' element={<About/>} />
+            <Route path='/contact' element={<Contact/>} />
+            <Route path='/login' element={<LogInPage/>} />
+            <Route path='/home' exact element={<Home/>} />
+            <Route path='/' exact element={<Home/>} />          
+            <Route element={<ErrorPage/>} />
+          </Routes> 
         <Footer />
       </Router>
     </Container>
+    </LoginContext.Provider>
   );
 }
 
