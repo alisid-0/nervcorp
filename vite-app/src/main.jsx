@@ -12,6 +12,8 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import './index.css'
+import { useState } from 'react'
+import { UserContext } from './UserContext.jsx'
 
 const router = createBrowserRouter([
   {
@@ -47,8 +49,12 @@ const router = createBrowserRouter([
 
 ])
 
+const contextValue = 'hello hi yo'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <UserContext.Provider value={contextValue}>
+      <RouterProvider router={router}/>
+    </UserContext.Provider>
   </React.StrictMode>,
 )
