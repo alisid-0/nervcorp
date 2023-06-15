@@ -27,6 +27,7 @@
 }
 .nav{
   height: 50px;
+  width: 100%;
 }
 
 .home-section{
@@ -73,4 +74,20 @@
   margin-bottom: 50px !important;
   text-align: left !important;
   padding-bottom:160px !important;
+}
+
+.navbar {
+  height: auto;
+  overflow: visible;
+}
+
+.dropdown-menu {
+  position: relative;
+}
+
+@media (max-width: 1199px) {
+  .login-button {
+    background: none !important;
+    border: none !important;
+  }
 }

@@ -9,6 +9,18 @@ const getAllUsers = async(req,res) =>{
     }
 }
 
+const findUser = async(req,res)=>{
+    const { email } = req.body
+    try{
+        const user = await User.findOne({email})
+        if (user){
+            res.status(200).json(user)
+        }
+    } catch(e){
+        res.status(400).json(`User not found!`)
+    }
+}
+
 const createUser = async(req,res)=>{
     const users = new User(req.body)
     try{
@@ -21,5 +33,6 @@ const createUser = async(req,res)=>{
 
 module.exports ={
     getAllUsers,
-    createUser
+    createUser,
+    findUser
 }

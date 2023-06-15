@@ -1,52 +1,51 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import logo from './assets/nervlogo.png';
 import { Navbar, Nav, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { LoginContext } from './App';
 
 function Header() {
-  const contextValue = useContext(LoginContext)
-  const user = contextValue.user
+  const contextValue = useContext(LoginContext);
+  const user = contextValue.user;
+  const [expanded, setExpanded] = useState(false);
+
+  const closeNav = () => setExpanded(false);
+
   return (
     <Container className='header-login'>
-      <Navbar variant='dark' className='nav'>
-        <Navbar.Brand as={Link} to='/home'>
+      <Navbar expanded={expanded} onToggle={setExpanded} variant='dark' className='nav' expand='xl'>
+        <Navbar.Brand as={Link} to='/home' onClick={closeNav}>
           <Container className='title-logo'>
             <img src={logo} alt='logo' />
             <h1>nerv</h1>
           </Container>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls='basic-navbar-nav' />
+        <Navbar.Toggle onClick={() => setExpanded(expanded ? false : "expanded")} aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='mr-auto'>
-            <Nav.Link as={Link} to='/home'>
+            <Nav.Link as={Link} to='/home' onClick={closeNav}>
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to='/games'>
+            <Nav.Link as={Link} to='/games' onClick={closeNav}>
               Games
             </Nav.Link>
-            <Nav.Link as={Link} to='/forum'>
-              Forum
+            <Nav.Link as={Link} to='/blog' onClick={closeNav}>
+              Blog
             </Nav.Link>
-            <Nav.Link as={Link} to='/about'>
+            <Nav.Link as={Link} to='/about' onClick={closeNav}>
               About
             </Nav.Link>
-            <Nav.Link as={Link} to='/contact'>
+            <Nav.Link as={Link} to='/contact' onClick={closeNav}>
               Contact
             </Nav.Link>
           </Nav>
+          <Button className='btn-dark py-3 login-button' as={Link} to='/login' onClick={closeNav}>
+            {Object.keys(user).length !== 0 ? 'Account' : 'Log In'}
+          </Button>
         </Navbar.Collapse>
       </Navbar>
-      {Object.keys(user).length !=0? (
-        <h6 className='pt-3' style={{color: 'rgba(255, 255, 255, 0.55)'}}>
-          Welcome, {user.name}!
-        </h6>  
-    ): null}
-      <Button className='btn-dark py-3 login-button' as={Link} to='/login'>
-        {Object.keys(user).length !=0? 'Log Out': 'Log In'}
-      </Button>
     </Container>
   );
 }
