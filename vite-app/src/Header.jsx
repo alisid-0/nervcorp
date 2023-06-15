@@ -15,7 +15,7 @@ function Header() {
 
   return (
     <Container className='header-login'>
-      <Navbar expanded={expanded} onToggle={setExpanded} variant='dark' className='nav' expand='xl'>
+      <Navbar expanded={expanded} onToggle={setExpanded} variant='dark' className='nav' expand='lg'>
         <Navbar.Brand as={Link} to='/home' onClick={closeNav}>
           <Container className='title-logo'>
             <img src={logo} alt='logo' />
