@@ -129,41 +129,61 @@ const LogInPage=()=>{
     
       }
     
-    function CreateBlog(){
-        
+      function CreateBlog() {
         const [title, setTitle] = useState("");
         const [content, setContent] = useState("");
+        const [images, setImages] = useState([]);
     
         const submitPost = async () => {
-            const date = new Date()
-            date.setHours(date.getHours() - 5)
-            try {
+          const date = new Date();
+          date.setHours(date.getHours() - 5);
+          try {
             const newPost = await axios.post("http://localhost:3001/api/blogposts", {
-                post_title: title,
-                post_date: date,
-                post: content
+              post_title: title,
+              post_date: date,
+              post: content,
+              images: images.map((image) => URL.createObjectURL(image)), // Use URL.createObjectURL to generate a temporary URL for the uploaded image
             });
             console.log(newPost);
-            } catch(err) {
+          } catch (err) {
             console.log(err);
-            }
+          }
         };
+    
+        const handleImageChange = (e) => {
+          const fileList = e.target.files;
+          const imageArray = Array.from(fileList).map((file) => file);
+          setImages(imageArray);
+        };
+    
         return (
-            <Container>
-                <h2>Blogs</h2>
-                <Form onSubmit={(e) => {e.preventDefault(); submitPost();}} className="mx-auto my-5" style={{maxWidth: '500px'}}>
-                <Form.Group>
-                    <Form.Label className="text-light">Title:</Form.Label>
-                    <Form.Control type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label className="text-light">Content:</Form.Label>
-                    <Form.Control as="textarea" rows={3} value={content} onChange={(e) => setContent(e.target.value)} />
-                </Form.Group>
-                <Button type="submit" value="Submit" block>Post</Button>
-                </Form>
-            </Container>
-            );
+          <Container>
+            <h2>Blogs</h2>
+            <Form onSubmit={(e) => { e.preventDefault(); submitPost(); }} className="mx-auto my-5" style={{ maxWidth: '500px' }}>
+              <Form.Group>
+                <Form.Label className="text-light">Title:</Form.Label>
+                <Form.Control type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label className="text-light">Content:</Form.Label>
+                <Form.Control as="textarea" rows={3} value={content} onChange={(e) => setContent(e.target.value)} />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label className="text-light">Images:</Form.Label>
+                <Form.Control type="file" multiple onChange={handleImageChange} />
+              </Form.Group>
+              <Button type="submit" value="Submit" block>Post</Button>
+            </Form>
+            {images.length > 0 && (
+              <div>
+                <h3>Uploaded Images:</h3>
+                {images.map((image, index) => (
+                  <img src={URL.createObjectURL(image)} alt={`Image ${index}`} key={index} />
+                ))}
+              </div>
+            )}
+          </Container>
+        );
       }
 
     function DeleteBlog(){
