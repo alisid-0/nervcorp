@@ -1,18 +1,18 @@
 const mongoose = require(`mongoose`)
 const gameSchema = require(`./gameModel`)
 const userSchema = require(`./userModel`)
-const reviewSchema = require(`./reviewModel`)
+const blogPostSchema = require(`./blogPostModel`)
 const commentSchema = require(`./commentModel`)
 
 const Game = mongoose.model(`Game`, gameSchema)
 const User = mongoose.model(`User`, userSchema)
-const Review = mongoose.model(`Review`, reviewSchema)
+const BlogPost = mongoose.model(`BlogPost`, blogPostSchema)
 const Comment = mongoose.model(`Comment`, commentSchema)
 
 module.exports = {
     Game,
     User,
-    Review,
+    BlogPost,
     Comment
 }
 

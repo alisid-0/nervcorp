@@ -10,7 +10,7 @@ const About = () => {
       <Container className="about-page">
       <Row className="mt-5">
         <Col>
-          <h2 className="text-light pb-5">The Epic Saga of Nerv Corporation</h2>
+          <h2 className="text-light pb-5 fs-1">The Epic Saga of Nerv Corporation</h2>
           <p className="text-light">
             What started as the ambitious dream of an 8-year-old kid has today blossomed into Nerv Corporation. A one-man powerhouse, the studio symbolizes a decade-long commitment to crafting unique, immersive gaming experiences, leveraging the power of Unreal Engine.
           </p>
@@ -19,7 +19,7 @@ const About = () => {
       </Row>
       <Row className="mt-5">
         <Col>
-          <h2 className="text-light pb-5">Our Adventure in Game Development</h2>
+          <h2 className="text-light pb-5 fs-1">Our Adventure in Game Development</h2>
           <p className="text-light">
             Over the years, we have embarked on various daring ventures, exploring multiple game engines and tackling challenges head-on. Our adventure has taught us the value of achievable goals, which led us to shift our focus on a one-man project. The fruit of this new vision is "Lunaris," the next big revelation in the indie gaming universe.
           </p>
