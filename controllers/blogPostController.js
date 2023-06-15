@@ -19,7 +19,18 @@ const createPost = async(req,res)=>{
     }
 }
 
+const deletePost = async(req,res)=>{
+    try{
+        const post = await BlogPost.findByIdAndDelete(req.params.id)
+        if (!post) return res.status(404).send('No post found!')
+        res.status(200).send(`Post deleted successfully!`)
+    } catch(e){
+        res.status(500).send(e.message)
+    }
+}
+
 module.exports = {
     getAllPosts,
-    createPost
+    createPost,
+    deletePost
 }
