@@ -10,7 +10,7 @@ const BlogPosts = () => {
     const getPosts = async () => {
       try {
         const postsAPI = await axios.get(`http://localhost:3001/api/blogposts`);
-        setPosts(postsAPI.data);
+        setPosts(postsAPI.data.reverse());
         console.log(postsAPI.data)
       } catch (err) {
         console.error(err);

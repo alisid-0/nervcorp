@@ -53,7 +53,6 @@ const LogInPage=()=>{
                 <>
                 <div className='py-5'>
                     <Card style={{maxWidth: '30rem', color: '#000', backgroundColor: '#f5f5f5', margin: '0 auto'}}>
-                        <Card.Img variant="top" src={user.picture} />
                         <Card.Body>
                             <Card.Title><h1>Welcome, {user.name}!</h1></Card.Title>
                             <Card.Text>
@@ -62,6 +61,10 @@ const LogInPage=()=>{
                             <Button variant="primary" onClick= {(e)=> handleSignOut(e)}>Sign Out</Button> 
                         </Card.Body>
                     </Card>
+                </div>
+                <div>
+                    {user.email === "nervcorphq@gmail.com" && <AdminPanel />}
+
                 </div>
                 </>
              
@@ -76,6 +79,42 @@ const LogInPage=()=>{
 }
 
 
+function AdminPanel() {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  
+  const submitPost = async () => {
+    const date = new Date()
+    date.setHours(date.getHours() - 5)
+    try {
+      const newPost = await axios.post("http://localhost:3001/api/blogposts", {
+        post_title: title,
+        post_date: date,
+        post: content
+      });
+      console.log(newPost);
+    } catch(err) {
+      console.log(err);
+    }
+  };
+
+  return (
+    <Container className='text-light'>
+      <h1>Admin Panel</h1>
+      <Form onSubmit={(e) => {e.preventDefault(); submitPost();}}>
+        <Form.Label>
+          Title:
+        </Form.Label>
+        <Form.Control type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <Form.Label>
+          Content:
+        </Form.Label>
+        <Form.Control value={content} onChange={(e) => setContent(e.target.value)} />
+        <Button type="submit" value="Submit" >Post</Button>
+      </Form>
+    </Container>
+  );
+}
 
 
 
