@@ -1,18 +1,18 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
-import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
-import Header from './Header';
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Container } from 'react-bootstrap'
+import { BrowserRouter as Router, Routes , Route } from 'react-router-dom'
+import Header from './Header'
 import Home from './Home'
-import Games from './Games';
-import Blog from './Blog';
-import About from './About';
-import Contact from './Contact';
-import LogInPage from './LogInPage';
-import ErrorPage from './ErrorPage';
-import Footer from './Footer';
+import Games from './Games'
+import Blog from './Blog'
+import About from './About'
+import Contact from './Contact'
+import LogInPage from './LogInPage'
+import ErrorPage from './ErrorPage'
+import Footer from './Footer'
 import SignUp from './SignUp'
-import { useState, createContext, useEffect } from 'react';
+import { useState, createContext, useEffect } from 'react'
 
 
 
@@ -48,7 +48,7 @@ function App() {
       </Router>
     </Container>
     </LoginContext.Provider>
-  );
+  )
 }
 
-export default App;
+export default App

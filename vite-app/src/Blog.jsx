@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Carousel, Card, Dropdown, DropdownButton } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react'
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Container, Carousel, Card, Dropdown, DropdownButton } from 'react-bootstrap'
 
 const BlogPostList = ({ posts, onSelectPost }) => {
   return (
@@ -28,7 +28,7 @@ const BlogPostView = ({ post }) => {
           <Carousel>
             {post.images.map((image, i) => (
               <Carousel.Item key={i}>
-                <img className="d-block w-100" src={image} alt={`Slide ${i + 1}`} />
+                <img className="d-block w-100" src={image} />
               </Carousel.Item>
             ))}
           </Carousel>
@@ -36,31 +36,31 @@ const BlogPostView = ({ post }) => {
       )}
       <p className='post'>{post.post}</p>
     </Container>
-  );
-};
+  )
+}
 
 const Blog = () => {
-  const [posts, setPosts] = useState([]);
-  const [selectedPost, setSelectedPost] = useState(null);
+  const [posts, setPosts] = useState([])
+  const [selectedPost, setSelectedPost] = useState(null)
 
   useEffect(() => {
     const getPosts = async () => {
       try {
-        const postsAPI = await axios.get(`http://localhost:3001/api/blogposts`);
-        setPosts(postsAPI.data.reverse());
-        setSelectedPost(postsAPI.data[0]);
-        console.log(postsAPI.data);
+        const postsAPI = await axios.get(`http://localhost:3001/api/blogposts`)
+        setPosts(postsAPI.data.reverse())
+        setSelectedPost(postsAPI.data[0])
+        console.log(postsAPI.data)
       } catch (err) {
-        console.error(err);
+        console.error(err)
       }
-    };
+    }
 
-    getPosts();
-  }, []);
+    getPosts()
+  }, [])
 
   const handleSelectPost = (post) => {
-    setSelectedPost(post);
-  };
+    setSelectedPost(post)
+  }
 
   return (
     <Container className="home-content text-light">
@@ -89,7 +89,7 @@ const Blog = () => {
         </div>
       </Container>
     </Container>
-  );
-};
+  )
+}
 
-export default Blog;
+export default Blog

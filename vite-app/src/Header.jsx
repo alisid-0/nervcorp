@@ -1,17 +1,17 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useContext, useState } from 'react';
-import logo from './assets/nervlogo.png';
-import { Navbar, Nav, Button, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { LoginContext } from './App';
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import React, { useContext, useState } from 'react'
+import logo from './assets/nervlogo.png'
+import { Navbar, Nav, Button, Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import { LoginContext } from './App'
 
 function Header() {
-  const contextValue = useContext(LoginContext);
-  const user = contextValue.user;
-  const [expanded, setExpanded] = useState(false);
+  const contextValue = useContext(LoginContext)
+  const user = contextValue.user
+  const [expanded, setExpanded] = useState(false)
 
-  const closeNav = () => setExpanded(false);
+  const closeNav = () => setExpanded(false)
 
   return (
     <Container className='header-login'>
@@ -47,7 +47,7 @@ function Header() {
         </Navbar.Collapse>
       </Navbar>
     </Container>
-  );
+  )
 }
 
-export default Header;
+export default Header

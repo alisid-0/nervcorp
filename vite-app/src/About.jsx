@@ -1,9 +1,9 @@
-import React from 'react';
-import { Container, Row, Col, Card, Button, Image } from 'react-bootstrap';
-import './App';
+import React from 'react'
+import { Container, Row, Col, Card, Button, Image } from 'react-bootstrap'
+import './App'
 import logo from './assets/nervlight.png'
 import lunarisGif from './assets/lunaris.gif'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
@@ -92,7 +92,7 @@ const About = () => {
       </Container>
     </div>
     
-  );
+  )
 }
 
-export default About;
+export default About

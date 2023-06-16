@@ -1,10 +1,10 @@
 import {Container, Form, Button} from 'react-bootstrap'
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import React, { useEffect, useState, useContext } from 'react'
 import './App.css'
-import { LoginContext } from './App';
-import { Link } from 'react-router-dom';
+import { LoginContext } from './App'
+import { Link } from 'react-router-dom'
 
 
 function SignUp(){
@@ -17,17 +17,16 @@ function SignUp(){
         const emailInUse = users.some(user => user.email === email)
 
         if(emailInUse){
-            alert('Email is already in use');
+            alert('Email is already in use')
         } else {
-            // Create user
             const newUser = {
                 name,
                 email,
                 password,
             }
 
-            await axios.post('http://localhost:3001/api/users', newUser);
-            alert('User created successfully');
+            await axios.post('http://localhost:3001/api/users', newUser)
+            alert('User created successfully')
         }
     }
 

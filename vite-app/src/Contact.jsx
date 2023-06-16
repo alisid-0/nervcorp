@@ -1,8 +1,8 @@
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Form, Button} from 'react-bootstrap'
 import { useRef } from 'react'
-import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser'
 
 
 
@@ -14,9 +14,9 @@ function Contact() {
 
     emailjs.sendForm('service_68f5b48', 'template_zyxyq9j', form.current, 'CKBKqKx59PeQYK9v6')
       .then((result) => {
-          console.log(result.text);
+          console.log(result.text)
       }, (error) => {
-          console.log(error.text);
+          console.log(error.text)
       });
       e.target.reset()
   };

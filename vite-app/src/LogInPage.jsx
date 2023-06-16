@@ -1,6 +1,6 @@
 import {Container, Form, Button, Card} from 'react-bootstrap'
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import React, { useEffect, useState, useContext } from 'react'
 import jwt_decode from 'jwt-decode'
 import './App.css'
@@ -148,13 +148,13 @@ const LogInPage=()=>{
           } catch (err) {
                console.log(err)
           }
-      };
+      }
 
       const handleImageChange = (e) => {
         const fileList = e.target.files
         const imageArray = Array.from(fileList).map((file) => URL.createObjectURL(file))
         setImages(imageArray)
-      };
+      }
 
   return (
     <Container>
@@ -183,7 +183,7 @@ const LogInPage=()=>{
         </div>
       )} */}
     </Container>
-  );
+  )
 }
 
     function DeleteBlog(){

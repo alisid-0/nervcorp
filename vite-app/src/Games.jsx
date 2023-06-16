@@ -1,15 +1,15 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Carousel } from 'react-bootstrap';
-import lunarisGIF from './assets/lunaris.gif';
-import introImg from './assets/3.PNG';
-import introImg2 from './assets/2.png';
-import shedImg from './assets/5.png';
-import img4 from './assets/4.png';
-import img12 from './assets/12.png';
-import menu from './assets/10.png';
-import img6 from './assets/6.png';
-import img9 from './assets/9.png';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Container, Carousel } from 'react-bootstrap'
+import lunarisGIF from './assets/lunaris.gif'
+import introImg from './assets/3.PNG'
+import introImg2 from './assets/2.png'
+import shedImg from './assets/5.png'
+import img4 from './assets/4.png'
+import img12 from './assets/12.png'
+import menu from './assets/10.png'
+import img6 from './assets/6.png'
+import img9 from './assets/9.png'
 
 function Games() {
   return (
@@ -109,7 +109,7 @@ function Games() {
         <p className="pt-5">Release Date: TBA</p>
       </Container>
     </>
-  );
+  )
 }
 
-export default Games;
+export default Games

@@ -1,11 +1,11 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Image, Carousel } from 'react-bootstrap';
-import nervDark from './assets/nervdark.png';
-import lunarisGIF from './assets/lunaris.gif';
-import introImg from './assets/3.PNG';
-import introImg2 from './assets/2.png';
-import shedImg from './assets/5.png';
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Container, Image, Carousel } from 'react-bootstrap'
+import nervDark from './assets/nervdark.png'
+import lunarisGIF from './assets/lunaris.gif'
+import introImg from './assets/3.PNG'
+import introImg2 from './assets/2.png'
+import shedImg from './assets/5.png'
 
 const nervPara = `Welcome to Nerv, a small and passionate indie game development studio dedicated to creating unique and exciting games.
 
@@ -19,7 +19,7 @@ Whether you're a fellow game enthusiast, a potential collaborator, or simply cur
 
 Thank you for joining us on this exciting ride!
 
-- The Nerv Team`;
+- The Nerv Team`
 
 function WhoWeAre() {
   return (
@@ -91,7 +91,7 @@ function Home() {
       <WhoWeAre />
       <Projects />
     </Container>
-  );
+  )
 }
 
-export default Home;
+export default Home
