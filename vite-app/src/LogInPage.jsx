@@ -226,7 +226,7 @@ const LogInPage=()=>{
                 >
                   <h1>{post.post_title}</h1>
                   <p>{new Date(post.post_date).toLocaleDateString()}</p>
-                  <Button onClick={() => deleteBlogById(post._id)}>Delete</Button>
+                  <Button className='btn-danger'onClick={() => deleteBlogById(post._id)}>Delete</Button>
                 </Container>
               ))}
             </>
