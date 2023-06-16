@@ -10,7 +10,7 @@ function Contact() {
   const form = useRef()
 
   const sendEmail = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     emailjs.sendForm('service_68f5b48', 'template_zyxyq9j', form.current, 'CKBKqKx59PeQYK9v6')
       .then((result) => {
@@ -19,7 +19,7 @@ function Contact() {
           console.log(error.text)
       });
       e.target.reset()
-  };
+  }
 
   return (
     <Container className='home-content text-light'>
