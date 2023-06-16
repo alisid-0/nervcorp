@@ -6,6 +6,7 @@ import lunarisGIF from './assets/lunaris.gif'
 import introImg from './assets/3.PNG'
 import introImg2 from './assets/2.png'
 import shedImg from './assets/5.png'
+import img13 from './assets/13.png'
 
 const nervPara = `Welcome to Nerv, a small and passionate indie game development studio dedicated to creating unique and exciting games.
 
@@ -44,6 +45,13 @@ function ProjectCarousel() {
         <img
           className="d-block w-100"
           src={introImg}
+          alt="Lunaris Screenshot 2"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={img13}
           alt="Lunaris Screenshot 2"
         />
       </Carousel.Item>

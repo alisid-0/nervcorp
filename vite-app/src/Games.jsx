@@ -10,6 +10,7 @@ import img12 from './assets/12.png'
 import menu from './assets/10.png'
 import img6 from './assets/6.png'
 import img9 from './assets/9.png'
+import img13 from './assets/13.png'
 
 function Games() {
   return (
@@ -72,6 +73,9 @@ function Games() {
             </Carousel.Item>
             <Carousel.Item>
               <img className="d-block w-100" src={introImg2} alt="Lunaris Screenshot 3" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="d-block w-100" src={img13} alt="Lunaris Screenshot 1" />
             </Carousel.Item>
           </Carousel>
 
