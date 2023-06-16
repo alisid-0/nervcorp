@@ -89,6 +89,20 @@
   margin-left: 700px !important;
 }
 
+.blog-container{
+  margin-top: 50px;
+  display:flex;
+  flex-direction: row-reverse;
+}
+
+.blog-post-view-container{
+  margin-right: 30px;
+}
+
+.no-bullets {
+  list-style-type: none;
+}
+
 @media (max-width: 1399px) {
   .login-button {
     margin-left: 540px !important;
