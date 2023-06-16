@@ -1,6 +1,6 @@
 # Nerv Game Studio
 
-![Nerv Game Studio Logo](./logo.png)
+![Nerv Game Studio Logo](./vite-app/src/assets/nervdark.png)
 
 Welcome to Nerv Game Studio, a small and passionate indie game development studio dedicated to creating unique and exciting games. Our mission is to bring immersive and memorable experiences to players worldwide.
 
