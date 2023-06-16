@@ -29,7 +29,7 @@ function Header() {
               Home
             </Nav.Link>
             <Nav.Link as={Link} to='/games' onClick={closeNav}>
-              Games
+              Lunaris
             </Nav.Link>
             <Nav.Link as={Link} to='/blog' onClick={closeNav}>
               Blog

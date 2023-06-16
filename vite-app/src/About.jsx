@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Button, Image } from 'react-bootstrap';
 import './App';
 import logo from './assets/nervlight.png'
 import lunarisGif from './assets/lunaris.gif'
+import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
@@ -23,7 +24,7 @@ const About = () => {
           <p className="text-light">
             Over the years, we have embarked on various daring ventures, exploring multiple game engines and tackling challenges head-on. Our adventure has taught us the value of achievable goals, which led us to shift our focus on a one-man project. The fruit of this new vision is "Lunaris," the next big revelation in the indie gaming universe.
           </p>
-          <Image src={lunarisGif} rounded className='img-fluid' /> 
+          <a href='/games'><Image src={lunarisGif} rounded className='img-fluid'/></a>
         </Col>
       </Row>
       <Row className="mt-5">

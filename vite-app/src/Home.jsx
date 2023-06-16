@@ -4,7 +4,15 @@ import Header from './Header'
 import { React, useState } from 'react';
 import { Container, Image, Carousel } from 'react-bootstrap';
 import nervDark from './assets/nervdark.png'
-import lunarisGif from './assets/lunaris.gif'
+import lunarisGIF from './assets/lunaris.gif'
+import introImg from './assets/3.PNG'
+import introImg2 from './assets/2.png'
+import shedImg from './assets/5.png'
+import img4 from './assets/4.png'
+import img12 from './assets/12.png'
+import menu from './assets/10.png'
+import img6 from './assets/6.png'
+import img9 from './assets/9.png'
 
 const nervPara = `Welcome to Nerv, a small and passionate indie game development studio dedicated to creating unique and exciting games.
 
@@ -36,49 +44,49 @@ function WhoWeAre(){
     )
 }
 
-function ProjectCarousel(){
-    const [index, setIndex] = useState(0)
-
-    const handleSelect = (selectedIndex) =>{
-        setIndex(selectedIndex)
-    }
-
-    return(
-        <Carousel activeIndex={index} onSelect={handleSelect}>
-            <Carousel.Item>
-                <Image
-                className="d-block w-100 c"
-                src={lunarisGif}
-                >
-                </Image>
-            </Carousel.Item>
-            <Carousel.Item>
-                <Image
-                className="d-block w-100 c"
-                src={lunarisGif}
-                >
-                </Image>
-            </Carousel.Item>
-            <Carousel.Item>
-                <Image
-                className="d-block w-100 c"
-                src={lunarisGif}
-                >
-                </Image>
-            </Carousel.Item>
-
-        </Carousel>
-    )
-}
+function ProjectCarousel() {
+    return (
+      <Carousel>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src={introImg}
+            alt="Lunaris Screenshot 2"
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src={lunarisGIF}
+            alt="Lunaris Screenshot 1"
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src={introImg2}
+            alt="Lunaris Screenshot 3"
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src={shedImg}
+            alt="Lunaris Screenshot 4"
+          />
+        </Carousel.Item>
+      </Carousel>
+    );
+  }
 
 function Projects(){
     return(
-        <Container className='text-light home-section'>
-            <h1>Our Projects</h1>
+        <Container className='text-light home-section projects'>
+            <h1>Explore Our Latest Game: Lunaris</h1>
             <Container>
-                <h2 className="pb-4">Lunaris</h2>
-                <ProjectCarousel/>
-                <h4 className="py-3">The moon is falling. Team up with an ally scientist to stop it.</h4>
+                <p>Journey through a strange world on a mission to save a mysterious scientist and their dying world. Your goal? Stop the moon from falling into the planet. Unravel the circumstances behind the falling moon and fight to prevent its cataclysmic impact. Explore different landscapes, uncover dark secrets, and question your own reality as you embark on this thrilling adventure.</p>
+                <ProjectCarousel />
+                <p className='my-5'>Lunaris is a visually stunning game that showcases a unique art syle, otherwordly level designs and a captivating storyline. Immerse yourself in the rich and atmospheric environments as you navigate through the game world. With breathtaking visuals and engaging gameplay, Lunaris offers an unforgettable gaming experience.</p>
             </Container>
         </Container>
     )
@@ -87,8 +95,8 @@ function Projects(){
 function Home() {
   return (
     <Container>
-        <WhoWeAre className="my-5 mx-5 py-5"/>
-        <Projects className="my-5 mx-5 py-5"/>
+        <WhoWeAre />
+        <Projects />
     </Container>
   );
 }
