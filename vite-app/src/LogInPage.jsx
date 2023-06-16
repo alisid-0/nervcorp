@@ -67,6 +67,7 @@ const LogInPage=()=>{
             for(let i of users.data){
                 console.log(i)
                 if (email == i.email){
+                  if(password == i.password){
                     console.log(`Signed in!`)
                     console.log(i.name, i.email)
                     let userObject = {
@@ -77,13 +78,14 @@ const LogInPage=()=>{
                     setUser(userObject)
                     userFound = true
                     break 
+                  }                    
                 } 
             }
             if (userFound) {
                 setSignedIn(true)
                 setShowLoginButton(false)
             } else {
-                console.log(`Account not found. Please try again.`)
+                alert(`Account not found. Please try again.`)
                 setSignedIn(false)
                 setUser({})
             }
