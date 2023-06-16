@@ -17,7 +17,7 @@ function Contact() {
           console.log(result.text)
       }, (error) => {
           console.log(error.text)
-      });
+      })
       e.target.reset()
   }
 

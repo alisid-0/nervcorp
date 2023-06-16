@@ -82,7 +82,7 @@ function Projects() {
         <p className='my-5'>Lunaris is a visually stunning game that showcases a unique art style, otherworldly level designs, and a captivating storyline. Immerse yourself in the rich and atmospheric environments as you navigate through the game world. With breathtaking visuals and engaging gameplay, Lunaris offers an unforgettable gaming experience.</p>
       </Container>
     </Container>
-  );
+  )
 }
 
 function Home() {

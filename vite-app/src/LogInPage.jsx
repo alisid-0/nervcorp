@@ -76,7 +76,7 @@ const LogInPage=()=>{
                     console.log(userObject)
                     setUser(userObject)
                     userFound = true
-                    break; 
+                    break 
                 } 
             }
             if (userFound) {
@@ -228,7 +228,7 @@ const LogInPage=()=>{
                 </Container>
               ))}
             </>
-          );
+          )
         }
 
     return(
