@@ -4,8 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState, useContext } from 'react'
 import jwt_decode from 'jwt-decode'
 import './App.css'
-import { LoginContext } from './App';
-import { Link } from 'react-router-dom';
+import { LoginContext } from './App'
+import { Link } from 'react-router-dom'
 
 
 
@@ -63,7 +63,7 @@ const LogInPage=()=>{
             const users = await axios.get(`http://localhost:3001/api/users`)
             console.log(users.data)
         
-            let userFound = false;
+            let userFound = false
             for(let i of users.data){
                 console.log(i)
                 if (email == i.email){
@@ -75,7 +75,7 @@ const LogInPage=()=>{
                     }
                     console.log(userObject)
                     setUser(userObject)
-                    userFound = true;
+                    userFound = true
                     break; 
                 } 
             }
@@ -129,32 +129,32 @@ const LogInPage=()=>{
     
       }
     
-      function CreateBlog() {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [images, setImages] = useState([]);
+    function CreateBlog() {
+      const [title, setTitle] = useState("")
+      const [content, setContent] = useState("")
+      const [images, setImages] = useState([])
 
-  const submitPost = async () => {
-    const date = new Date();
-    date.setHours(date.getHours() - 5);
-    try {
-      const newPost = await axios.post("http://localhost:3001/api/blogposts", {
-        post_title: title,
-        post_date: date,
-        post: content,
-        images: images, // Include the images array in the request payload
-      });
-      console.log(newPost);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+      const submitPost = async () => {
+        const date = new Date()
+        date.setHours(date.getHours() - 5)
+          try {
+            const newPost = await axios.post("http://localhost:3001/api/blogposts", {
+              post_title: title,
+              post_date: date,
+              post: content,
+              images: images,
+          });
+          console.log(newPost)
+          } catch (err) {
+               console.log(err)
+          }
+      };
 
-  const handleImageChange = (e) => {
-    const fileList = e.target.files;
-    const imageArray = Array.from(fileList).map((file) => URL.createObjectURL(file));
-    setImages(imageArray);
-  };
+      const handleImageChange = (e) => {
+        const fileList = e.target.files
+        const imageArray = Array.from(fileList).map((file) => URL.createObjectURL(file))
+        setImages(imageArray)
+      };
 
   return (
     <Container>
@@ -206,11 +206,11 @@ const LogInPage=()=>{
 
           const deleteBlogById = async (id) => {
             try {
-              await axios.delete(`http://localhost:3001/api/blogposts/delete/${id}`);
-              setPosts(posts.filter((post) => post._id !== id));
-              console.log('Blog post deleted successfully.');
+              await axios.delete(`http://localhost:3001/api/blogposts/delete/${id}`)
+              setPosts(posts.filter((post) => post._id !== id))
+              console.log('Blog post deleted successfully.')
             } catch (error) {
-              console.error('Error deleting blog post:', error);
+              console.error('Error deleting blog post:', error)
             }
           };
         
