@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Carousel, Card } from 'react-bootstrap';
+import { Container, Carousel, Card, Dropdown, DropdownButton } from 'react-bootstrap';
 
 const BlogPostList = ({ posts, onSelectPost }) => {
   return (
@@ -34,7 +34,7 @@ const BlogPostView = ({ post }) => {
           </Carousel>
         </div>
       )}
-      <p>{post.post}</p>
+      <p className='post'>{post.post}</p>
     </Container>
   );
 };
@@ -48,6 +48,7 @@ const Blog = () => {
       try {
         const postsAPI = await axios.get(`http://localhost:3001/api/blogposts`);
         setPosts(postsAPI.data.reverse());
+        setSelectedPost(postsAPI.data[0]);
         console.log(postsAPI.data);
       } catch (err) {
         console.error(err);
@@ -64,14 +65,29 @@ const Blog = () => {
   return (
     <Container className="home-content text-light">
       <h1>Blog</h1>
-      <div className="blog-container">
-        <div className="blog-post-list-container">
-          <BlogPostList posts={posts} onSelectPost={handleSelectPost} />
+      <Container className='blog-page-wrapper'>
+        <div className="blog-container">
+          <div className="blog-post-list-container">
+            <BlogPostList posts={posts} onSelectPost={handleSelectPost} />
+          </div>
+          <div className="blog-post-view-container">
+            {selectedPost ? (
+              <BlogPostView post={selectedPost} />
+            ) : (
+              <p className="select-post-text">Select a blog post to view</p>
+            )}
+          </div>
         </div>
-        <div className="blog-post-view-container">
-          {selectedPost ? <BlogPostView post={selectedPost} /> : <p>Select a blog post to view</p>}
+        <div className="dropdown-blog-post-list-container">
+          <DropdownButton title="Select a blog post">
+            {posts.map((post, index) => (
+              <Dropdown.Item key={index} onClick={() => handleSelectPost(post)}>
+                {post.post_title}
+              </Dropdown.Item>
+            ))}
+          </DropdownButton>
         </div>
-      </div>
+      </Container>
     </Container>
   );
 };
