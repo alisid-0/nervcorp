@@ -10,8 +10,8 @@ Welcome to Nerv Game Studio, a small and passionate indie game development studi
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Technologies](#technologies)
+- [Design](#design)
 
 ## About
 
@@ -23,34 +23,40 @@ At Nerv Game Studio, we believe in the power of games to inspire, entertain, and
 - Attention to detail in graphics and gameplay
 - Engaging storylines and immersive worlds
 
+## Technologies
+
+- **Frontend:**
+  - React.js
+  - HTML5
+  - CSS3
+  - Bootstrap
+
+- **Backend:**
+  - Node.js
+  - Express.js
+
+- **Database:**
+  - MongoDB Atlas
+
+- **Game Engine:**
+  - Unreal Engine 5
+
 ## Installation
 
 1. Clone the repository: `git clone https://github.com/your-username/nerv-game-studio.git`
 2. Navigate to the project directory: `cd nerv-game-studio`
 3. Install the dependencies: `npm install`
 
-## Usage
 
-1. Run the application: `npm start`
-2. Open your browser and navigate to `http://localhost:3000`
+## Design
 
-## Contributing
+- [ERD](https://lucid.app/lucidchart/b1000531-81f3-4760-9578-f17003473bc8/edit?viewport_loc=-83%2C-459%2C3294%2C1655%2C0_0&invitationId=inv_9dc86ad1-d1f2-4f5d-a58d-0a3986886dc1)
+- [Trello](https://trello.com/invite/b/sYxawdV4/ATTI5c242f8db8ba4a585ebf6ab6159754efC9DCEC38/nerv)
 
-We welcome contributions from the community to help make our games even better. To contribute, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch: `git checkout -b my-feature`
-3. Make your changes and commit them: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin my-feature`
-5. Open a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For any inquiries or collaborations, please contact us at [contact@nervgamestudio.com](mailto:contact@nervgamestudio.com).
+For any inquiries or collaborations, please contact us at [nervcorphq@gmail.com](mailto:nervcorphq@gmail.com).
 
 Follow us on [Twitter](https://twitter.com/NervGameStudio) for the latest updates and announcements.
 
