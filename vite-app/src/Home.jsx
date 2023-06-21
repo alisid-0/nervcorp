@@ -4,7 +4,7 @@ import { Container, Image, Carousel } from 'react-bootstrap'
 import nervDark from './assets/nervdark.png'
 import lunarisGIF from './assets/lunaris.gif'
 import introImg from './assets/3.PNG'
-import introImg2 from './assets/2.png'
+// import introImg2 from './assets/2.png'
 import shedImg from './assets/5.png'
 import img13 from './assets/13.png'
 
@@ -65,7 +65,7 @@ function ProjectCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={introImg2}
+          // src={introImg2}
           alt="Lunaris Screenshot 3"
         />
       </Carousel.Item>
