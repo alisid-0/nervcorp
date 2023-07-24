@@ -1,8 +1,8 @@
-# Nerv Game Studio
+# NervCorp
 
-![Nerv Game Studio Logo](./vite-app/src/assets/nervdark.png)
+![NervCorp Logo](./vite-app/src/assets/nervdark.png)
 
-Welcome to Nerv Game Studio, a small and passionate indie game development studio dedicated to creating unique and exciting games. Our mission is to bring immersive and memorable experiences to players worldwide.
+Welcome to NervCorp, a small and passionate indie game development studio dedicated to creating unique and exciting games. Our mission is to bring immersive and memorable experiences to players worldwide.
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ Welcome to Nerv Game Studio, a small and passionate indie game development studi
 
 ## About
 
-At Nerv Game Studio, we believe in the power of games to inspire, entertain, and connect people. Our projects are a labor of passion, showcasing our creativity, attention to detail, and love for the craft of game development. We strive to create games that captivate players, spark their imagination, and leave a lasting impression.
+At NervCorp, we believe in the power of games to inspire, entertain, and connect people. Our projects are a labor of passion, showcasing our creativity, attention to detail, and love for the craft of game development. We strive to create games that captivate players, spark their imagination, and leave a lasting impression.
 
 ## Features
 
@@ -43,8 +43,8 @@ At Nerv Game Studio, we believe in the power of games to inspire, entertain, and
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/nerv-game-studio.git`
-2. Navigate to the project directory: `cd nerv-game-studio`
+1. Clone the repository: `git clone https://github.com/your-username/nervcorp.git`
+2. Navigate to the project directory: `cd nervcorp`
 3. Install the dependencies: `npm install`
 
 
@@ -58,5 +58,5 @@ At Nerv Game Studio, we believe in the power of games to inspire, entertain, and
 
 For any inquiries or collaborations, please contact us at [nervcorphq@gmail.com](mailto:nervcorphq@gmail.com).
 
-Follow us on [Twitter](https://twitter.com/NervGameStudio) for the latest updates and announcements.
+Follow us on [Twitter](https://twitter.com/NervCorpHQ) for the latest updates and announcements.
 
